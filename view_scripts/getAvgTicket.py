@@ -5,7 +5,7 @@ import pandas as pd
 connection = mysql.connector.connect(
     host="localhost",    
     user="root",         
-    password="C1e0-cat-m0wers",  
+    password="MilaLab*",  
     database="clinica_w_data"  
 )
 
@@ -40,7 +40,7 @@ cursor.close()
 connection.close()
 
 # Guardar el DataFrame en un archivo CSV
-df_ticket_promedio.to_csv("archivos/ticket_promedio.csv", index=False)
+df_ticket_promedio.to_csv("archivos/old_data/ticket_promedio.csv", index=False)
 
 # Mostrar los primeros registros
 print(df_ticket_promedio.head())

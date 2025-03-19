@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 connection = mysql.connector.connect(
     host="localhost",    
     user="root",         
-    password="C1e0-cat-m0wers",  
+    password="MilaLab*",  
     database="clinica_w_data"  
 )
 
@@ -66,7 +66,7 @@ table.set_fontsize(10)
 table.auto_set_column_width([0, 1])  # Ajusta las dos primeras columnas
 
 # Guardar la imagen
-plt.savefig("archivos/ticket_promedio.png", dpi=300, bbox_inches="tight")
+plt.savefig("archivos/old_data/ticket_promedio.png", dpi=300, bbox_inches="tight")
 
 # Mostrar la tabla
 plt.show()

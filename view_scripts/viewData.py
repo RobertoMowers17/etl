@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 from fpdf import FPDF
 
 # Cargar datos
-df = pd.read_csv("archivos/clean_clients.csv")
-df_ticket = pd.read_csv("archivos/ticket_promedio.csv")
+df = pd.read_csv("archivos/old_data/clean_clients.csv")
+df_ticket = pd.read_csv("archivos/old_data/ticket_promedio.csv")
 
 def generar_reporte():
     pdf = FPDF("P", "mm", "A4")  
@@ -57,12 +57,12 @@ def generar_reporte():
     plt.figure(figsize=(6, 6))
     plt.pie(valores, labels=categorias, autopct="%1.1f%%", startangle=140, wedgeprops={"edgecolor": "black"})
     plt.title("Propuesta de Tipo de Clientes según compras")
-    plt.savefig("archivos/grafico_compras.png")
+    plt.savefig("archivos/old_data/grafico_compras.png")
     plt.close()
 
     pdf.cell(200, 10, "Propuesta de Tipo de Clientes según cantidad de compras en el periodo 2024/2025", ln=True, align='C')
     pdf.ln(5)
-    pdf.image("archivos/grafico_compras.png", x=30, w=150)
+    pdf.image("archivos/old_data/grafico_compras.png", x=30, w=150)
     pdf.ln(15)
     
     pdf.set_font("Arial", size=10)
@@ -83,12 +83,12 @@ def generar_reporte():
     plt.figure(figsize=(6, 6))
     plt.pie(valores_gasto, labels=categorias_gasto, autopct="%1.1f%%", startangle=140, wedgeprops={"edgecolor": "black"})
     plt.title("Propuesta de Tipo de Clientes según gasto")
-    plt.savefig("archivos/grafico_gasto.png")
+    plt.savefig("archivos/old_data/grafico_gasto.png")
     plt.close()
 
     pdf.cell(200, 10, "Propuesta de Tipo de Clientes según dinero gastado en el periodo 2024/2025", ln=True, align='C')
     pdf.ln(5)
-    pdf.image("archivos/grafico_gasto.png", x=30, w=150)
+    pdf.image("archivos/old_data/grafico_gasto.png", x=30, w=150)
     pdf.ln(15)
 
     pdf.set_font("Arial", size=10)
@@ -96,7 +96,7 @@ def generar_reporte():
     pdf.ln(10)
 
     # Guardar PDF
-    pdf.output("archivos/reporte_clientes.pdf")
-    print("Informe generado: archivos/reporte_clientes.pdf")
+    pdf.output("archivos/old_data/reporte_clientes.pdf")
+    print("Informe generado: archivos/old_data/reporte_clientes.pdf")
 
 generar_reporte()
